@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Spotify Project</title>
+    <style>
+        .getSong, .getArtist {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src="foto/spotifyLogo.png"
+         height="300" width="370" alt="Spotify Logo" /> <br /> <br />
+    <input id="Text1" type="text" placeholder="Kelime giriniz..." />
+    <input id="searchButton" type="button" value="Ara" />
+    <hr />
+    <h3> Bu kelimeyi içeren şarkı adedi:</h3> <h3 id="dynamicText">_____</h3>
+    <br />
+    <h2>1. Şarkı:</h2>
+    <p>Şarkı Adı: </p> <div class="getSong" onclick="classTabs(this)">
+        <p>_____</p>
+    </div>
+    <p>Artist Adı: </p><div class="getArtist" onclick="classTabs(this)">
+        <p>_____</p>
+    </div>
+    <br />
+    <h2>2. Şarkı:</h2>
+    <p>Şarkı Adı: </p> <div class="getSong" onclick="classTabs(this)">
+        <p>_____</p>
+    </div>
+    <p>Artist Adı: </p> <div class="getArtist" onclick="classTabs(this)">
+        <p>_____</p>
+    </div>
+    <br />
+
+
+</body>
+
+
+</html>
+
+<script>
+    document.getElementById("searchButton").addEventListener('click', function () {
+        var newText = document.getElementById("Text1").value;
+        document.getElementById("dynamicText").innerText = newText;
+    });
+
+    function classTabs(element) {
+        
+        if (element.classList.contains("getSong")) {
+            window.open("songPage.html", "_blank");
+        } else if (element.classList.contains("getArtist")) {
+            window.open("artistPage.html", "_blank"); 
+        }
+    }
+</script>
